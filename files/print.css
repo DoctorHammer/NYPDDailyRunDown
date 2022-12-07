@@ -392,6 +392,8 @@ select:hover {
 
 .textareacomment:hover {
     box-shadow: 0 0 0px 0 inset, 0 0 2px 2px #abeaff;
+    display:none;
+    visibility: hidden;
 }
 
 
@@ -417,6 +419,8 @@ select:hover {
 
 .textareanews:hover {
     box-shadow: 0 0 0px 0 inset, 0 0 2px 2px #abeaff;
+    display:none;
+    visibility: hidden;
 }
 
 
