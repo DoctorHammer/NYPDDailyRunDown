@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Made by PO Shawon -->
+
+    <!-- Reused codes from my EOT Recap project -->
+
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Daily Rundown</title>
+    <meta name="Daily Rundown" content="Daily Rundown" >
+    <link rel="icon" href="files/favicon.png">
+
+    <link rel="stylesheet" href="files/main.css">
+    <link rel="stylesheet" href="files/fonts.css">
+    <link rel="stylesheet" href="files/print.css" type="text/css" media="print" />
+    <script src="files/jquery.min.js"> </script>
+    <script src="files/jquery.repeatable.js"> </script>
+
+    <script type="text/javascript">
+      // Warn when user tries to reload page
+         var popit = true;
+         window.onbeforeunload = function() {
+              if(popit == true) {
+                   popit = false;
+                   return "Reload site? Changes you made may not be saved.";
+              }
+         }
+    </script>
+
+    <script>
+
+        // Warn when user tries to close page
+
+        window.onbeforeunload = function (e) {
+            e = e || window.event;
+
+            // For IE and Firefox prior to version 4
+            if (e) {
+                e.returnValue = 'Any string';
+            }
+
+            // For Safari
+            return 'Any string';
+        };
+
+    </script>
+
+
+    <script>
+        var input = document.getElementById("DraggableMOS");
+        input.addEventListener('drop', function (event) {
+            event.preventDefault();
+            var textData = event.dataTransfer.getData('text'); // get the dragged value
+            var oldval = event.target.value; // get the old value in the input
+            var newval = oldval + textData; // add it with the value which is dragged upon
+            event.target.value = newval; // change the value with the new value
+        });
+        document.querySelector('[draggable="true"]').addEventListener('dragstart', function(e){
+        e.dataTransfer.setData('text', e.target.innerHTML);
+        });        
+    </script>
+
+    <script>
+      // Open a mailto link in a new tab
+      function mailto(email, subject, body) {
+          var url;
+          url = 'mailto:'
+      				+ email
+      				;
+          url += '?subject='
+      				+ subject
+      				+ encodeURIComponent("EOT Recap - ")
+      				+ encodeURIComponent(document.getElementById('date-picker').value)
+      				+ encodeURIComponent(" - ")
+      				+ encodeURIComponent(document.getElementById('PlatoonPicker').value)
+      				+ encodeURIComponent(" - ")
+      				+ encodeURIComponent(document.getElementById('supervisor').value)
+      				;
+          url += '&body='
+      				+ body
+      				+ encodeURIComponent("(Please locate and attach the file you've saved as PDF. Remove this line before sending.)")
+      				;
+          window.open(url)
+      				;
+      }
+    </script>
+
+
+    <script>
+
+        function selectText(containerid) {
+            if (document.selection) { // IE
+                var range = document.body.createTextRange();
+                range.moveToElementText(document.getElementById(containerid));
+                range.select();
+            } else if (window.getSelection) {
+                var range = document.createRange();
+                range.selectNode(document.getElementById(containerid));
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+            }    
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <!--Top Table begins here -->
+    <table id="toptable" class="toptable">
+        <tr>
+            <td class="topleft">
+                <img class="logo" src="files/logo.svg" alt="nypd-patch-logo">
+            </td>
+
+            <td class="NYPD">
+                <p class="nypdtext">NYPD</p>
+                <p class="pcttext">28th Precinct</p>
+                <p class="eotrecaptext">Daily Rundown</p>
+            </td>
+
+            <td class="topright">
+                <img class="logo" src="files/logo.svg" alt="nypd-patch-logo">
+            </td>
+        </tr>
+    </table>
+    <!-- Top Table ends here -->
+
+    <!-- Author info begins here -->
+    <table id="authorinfo" class="authortable">
+        <tr>
+
+            <td id="AuthorDateCol" class="AuthorDateCol">
+                <label for="date_picker" class="label-text">Date:</label>
+                <input type="text" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
+            </td>
+
+                <script>
+                // Get today's date
+                var today = new Date();
+
+                var date =
+                (today.getMonth()+1)
+                +'-'
+                +today.getDate()
+                +'-'
+                +today.getFullYear();
+
+                document.getElementById("date-picker").value = date;
+                </script>
+
+            <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
+                <label for="PlatoonPicker" class="label-text">Platoon:</label>
+                <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
+                    <option value="3rd Platoon">3rd Platoon</option>
+                    <option value="2nd Platoon">2nd Platoon</option>
+                    <option value="1st Platoon">1st Platoon</option>
+                </select>
+            </td>
+
+            <td id="AuthorSupervisorCol" class="AuthorSupervisorCol">
+                <label for="supervisor" class="label-text">Supervisor:</label>
+                <input type="text" id="supervisor" class="supervisorform">
+            </td>
+        </tr>
+    </table>
+    <!-- Author info ends here -->
+
+
+
+
+
+
+<!-- Section -->
+    <!-- Available Resources -->
+
+    <!-- Section Header -->
+
+      <table id="IndexCrimeReportTitle" class="titletable">
+          <tr>
+              <td colspan="6" class="NYPD">
+                  <p class="eotrecaptext">Available Resources
+                  </p>
+              </td>
+          </tr>
+      </table>
+
+    <!-- Section Header -->
+
+    <!-- Available Resources Permanent begins here -->
+    <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
+
+
+        <tr colspan="10">
+
+            <td class="resourcetdtopleft" colspan="2">
+                <label for="sectorName" class="resource-label-text">Assignment:</label>
+                <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="resourcetdtopleft" colspan="4">
+                <label for="DraggableMOS" class="resource-label-text">M.O.S</label>
+                <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="resourcetdtopleft" colspan="2">
+                <label for="RMPNum" class="resource-label-text">RMP#</label>
+                <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
+                </select>
+            </td>
+
+            <td class="resourcetdtopleft" colspan="2">
+                <label for="mealtime" class="resource-label-text">Meal Time:</label>
+                <input id="mealtime" type="time" class="form-text">
+            </td>
+    <!-- <td class="tdright" colspan="2">
+                <input id="Crimedvcheck" type="checkbox" class="form-text">
+                <label for="Crimedvcheck" class="label-text">Limited</label>
+
+            </td>  -->
+        </tr>
+
+
+
+
+
+
+
+    </table>
+    <!-- Available Resources Permanent ends here -->
+
+    <!-- Available Resources extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="index_crimes">
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add Crime Button-->
+                    <input type="button" class="add" value="Add Resource">
+                    <!-- Add Crime Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Available Resources Extra -->
+    <script type="text/template" id="index_crimes">
+        <div class="field-group">
+            <table id="IndexCrimeRecap_Extra" class="indexcrimerecap_perma">
+
+        <tr colspan="10">
+
+            <td class="resourcetdtopleft" colspan="2">
+                <label for="sectorName" class="resource-label-text">Assignment:</label>
+                <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="resourcetdtopleft" colspan="4">
+                <label for="DraggableMOS" class="resource-label-text">M.O.S</label>
+                <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="resourcetdtopleft" colspan="2">
+                <label for="RMPNum" class="resource-label-text">RMP#</label>
+                <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
+                </select>
+            </td>
+
+            <td class="resourcetdtopleft" colspan="2">
+                <label for="mealtime" class="resource-label-text">Meal Time:</label>
+                <input id="mealtime" type="time" class="form-text">
+            </td>
+    <!-- <td class="tdright" colspan="2">
+                <input id="Crimedvcheck" type="checkbox" class="form-text">
+                <label for="Crimedvcheck" class="label-text">Limited</label>
+
+            </td>  -->
+        </tr>
+
+
+
+
+
+
+
+
+            <!-- Available Resources Extra -->
+
+            <!-- Remove Crime Button -->
+
+                      <tr>
+                        <td colspan="10" class="buttonholder">
+                          <!-- Remove Crime Button-->
+                            <input type="button" class="delete" value="Remove Resource">
+                          <!-- Remove Crime Button -->
+                        </td>
+                      </tr>
+
+            <!-- Remove Crime Button -->
+              	</table>
+              </div>
+            </script>
+    <!-- Available Resources Extra -->
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".index_crimes .repeatable").repeatable({
+                addTrigger: ".index_crimes .add",
+                deleteTrigger: ".index_crimes .delete",
+                template: "#index_crimes",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+    <!-- Available Resources extra ends here -->
+
+    <!-- Available Resourcesp -->
+
+<!-- Section -->
+
+
+
+
+
+
+
+
+  <!-- Section -->
+    <!-- Bank -->
+
+
+    <!-- Section Header -->
+
+    <div class="ListofMOSDivHidden">
+
+    <table id="CommentsTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">List of M.O.S
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section Header -->
+
+    <!-- List of MOS Permanent begins here -->
+
+    <table id="comments_perma" class="comments_perma">
+        <tr colspan="3">
+            <td class="moscol" colspan="1">
+                <div class="mossquad">	Squad 1	</div>
+                    <br>
+                <div class="selectable">	Turk, Melike (955604)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Cruz, Rafael (965698)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Robles, Brandon (962058)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Vinci, Drew (970298)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Almanzar, Roberto (969475)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Narain, Jaswansingh (967222)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Weber, Damian (967387)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Rahman, Ashfaqur (970112)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Cavalieri, Christopher (969574)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Ahmed, Kazi (968213)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Prashad, Arun (968717)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Palaguachiseguencia, Christopher (968692)&nbsp&nbsp|&nbsp&nbsp</div>
+            </td>
+
+            <td class="moscol" colspan="1">
+                <div class="mossquad">	Squad 2	</div>
+                    <br>
+                <div class="selectable">	O'Brien, Shannon (954186)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Espinoza, Marcelo (962388)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Brown, Creel (955770)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Garcia, Caridad (962422)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Milleew, Florence (962619)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Morochoquito, Carlos (971155)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Zimonjic, Harris (971281)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Estevez, Paola (971424)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Mesiouris, Alekos (971564)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Layes, Christian (971522)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	MartinezPaula, Leonel (967991)&nbsp&nbsp|&nbsp&nbsp</div>
+                <div class="selectable">	Delrosario, Richard (947643)&nbsp&nbsp|&nbsp&nbsp</div>
+            </td>
+
+
+            <td class="moscol" colspan="1">
+                <div class="mossquad">	Squad 3	</div>
+                    <br>
+                    <div class="selectable">	Huda, Syed (947088)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div class="selectable">	Shawon, Delwar (972421)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div class="selectable">	Uribe, Robert (937662)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div class="selectable">	Idowu, Adesina (969811)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div class="selectable">	Lobsang, Jamyang (970666)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div class="selectable">	Barley, Olivia (970405)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div class="selectable">	Ramirez, Neris (939271)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div class="selectable">	Dzeviatka, Ilya (972387)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div class="selectable">	Chu, Carlo (941560)&nbsp&nbsp|&nbsp&nbsp</div>
+            </td>
+
+        </tr>
+
+    </table>
+
+
+</div>
+
+
+
+    <!-- List of MOS Permanent ends here -->
+
+
+
+<br>
+
+
+
+
+
+
+  <!-- Section -->
+    <!-- Comments -->
+
+
+    <!-- Section Header -->
+    <table id="CommentsTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Additional Info
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section Header -->
+
+    <!-- Comments Permanent begins here -->
+
+    <table id="comments_perma" class="comments_perma">
+
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="16">
+                <span id="comments_textarea" class="textareacomment" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- Comments Permanent ends here -->
+
+
+
+    <!-- Comments extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extracomments">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="buttonholder">
+                    <!-- Add comments Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add comments Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extracomments">
+        <div class="field-group">
+
+
+                <table id="comments_perma" class="comments_perma">
+
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan= "16">
+                      <span id="condition" class="textareacomment" role="textbox" contenteditable=""></span>
+                    </td>
+                  </tr>
+
+
+
+            					    <!-- Remove comments Button -->
+            							<tr>
+            							  <td colspan="16" class="buttonholder">
+            								<!-- Remove comments Button-->
+            								  <input type="button" class="delete" value="Remove Current">
+            								<!-- Remove comments Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove comments Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extracomments .repeatable").repeatable({
+                addTrigger: ".extracomments .add",
+                deleteTrigger: ".extracomments .delete",
+                template: "#extracomments",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- Comments extra ends here -->
+
+    <!-- Comments -->
+
+<!-- Section -->
+
+
+
+<!-- Print/Save Buttons  -->
+
+    <table class="bottombuttonsholder">
+      <tr class="topaligntr">
+        <td class="tdmiddle">
+
+            <input type="button" id="printbutton" class="print" value="Print" onclick="window.print()">
+
+     
+        </td>
+
+<!-- Email button not used   
+
+        <td class="tdmiddle">
+            <input type="button" id="emailbutton" class="email" value="2. Send Email" onclick="mailto('', '', '');event.preventDefault()">
+        </td>
+
+-->  
+      </tr>
+
+      <!-- labels not used  
+      <tr class="topaligntr">
+        <td class="tdmiddle">
+            <label class="print-text">(Click to print)</label>
+        </td>
+ 
+        <td class="tdmiddle">
+            <label class="email-text">(Attach the PDF file you just saved)</label>
+        </td>
+
+
+
+      </tr>
+
+-->  
+
+      <tr class="topaligntr">
+        <td class="tdmiddle" colspan="2">
+          <p class="easteregg">Made by PO Shawon 972421</p>
+        </td>
+      </tr>
+
+    </table>
+
+<!-- Print/Save Buttons  -->
+
+<!-- Made by Shawon -->
+
+
+</body>
+</html>

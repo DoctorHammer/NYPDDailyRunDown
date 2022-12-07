@@ -1,19 +1,18 @@
 <!-- /* Body */ -->
 
 body, html {
-  max-width: 21.59cm;
-  max-height: 35.56cm;
+  max-width: 8.5in;
+  max-height: 14in;
   margin: auto;
-  padding: 1rem;
+
 }
 
 @page {
-  max-width: 21.59cm;
-  max-height: 35.56cm;
-    size: legal portrait;
-  margin: 0.635cm 0.635cm;
+  max-width: 8.5in;
+  max-height: 14in;
+    size: letter portrait;
+    margin: auto;
 }
-
 
 
 <!-- /* Fonts */ -->
@@ -56,19 +55,19 @@ width: 100%;
 
 
 .indexcrimerecap_perma {
-width: 100%;
-    border-collapse: separate;
-    border-spacing: 10px 10px;
-    box-sizing: border-box;
-
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    table-layout: fixed;
-}
-
-
+  width: 100%;
+      border-collapse: collapse;
+      border-spacing: 10px 4px;
+      box-sizing: border-box;
+  
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      table-layout: fixed;
+  }
+  
+  
 .oat_perma {
 width: 100%;
     border-collapse: separate;
@@ -114,7 +113,7 @@ width: 100%;
     border-spacing: 10px 10px;
     box-sizing: border-box;
     border-top: 1px solid black;
-    border-bottom: 3px solid black;
+    border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
     table-layout: fixed;
@@ -305,6 +304,15 @@ text-align: right;
     line-height: 0px;
 }
 
+.section-title {
+  font-family: Vitesse;
+  font-style: light;
+padding-left: 5px;
+font-size: 12pt;
+}
+
+
+
 .eotrecaptext {
   font-family: vitesse;
   font-style: normal;
@@ -433,12 +441,18 @@ border: 1px solid #ccc;
 }
 
 .extracontainer {
-border: none;
-
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
+
 .index_crimes {
-border: none;
+border: 0;
+margin: 0;
+padding: 0;
+width: 100%;
 }
 
 .extraarrests {
@@ -461,8 +475,12 @@ border: none;
 
 
 .extracomments {
-  border: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
+  
 
 .easteregg {
   font-family: Vitesse;
@@ -551,6 +569,8 @@ border-collapse: collapse;
 border: 0px solid black;
 box-sizing: content-box;
 table-layout: fixed;
+display: none;
+visibility: hidden;
 
 }
 

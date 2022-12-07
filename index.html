@@ -110,64 +110,89 @@
 
 
     <!--Top Table begins here -->
-    <table id="toptable" class="toptable">
-        <tr>
-            <td class="topleft">
-                <img class="logo" src="files/logo.svg" alt="nypd-patch-logo">
-            </td>
-
-            <td class="NYPD">
-                <p class="nypdtext">NYPD</p>
-                <p class="pcttext">28th Precinct</p>
-                <p class="eotrecaptext">Daily Rundown</p>
-            </td>
-
-            <td class="topright">
-                <img class="logo" src="files/logo.svg" alt="nypd-patch-logo">
-            </td>
-        </tr>
-    </table>
+        <table id="toptable" class="toptable">
+            <tr>
+                <td class="NYPD">
+                    <p class="titletext">Daily Rundown</p>
+                </td>
+        </table>
     <!-- Top Table ends here -->
+    
 
     <!-- Author info begins here -->
-    <table id="authorinfo" class="authortable">
-        <tr>
+        <table id="authorinfo" class="authortable">
+            <tr>
 
-            <td id="AuthorDateCol" class="AuthorDateCol">
-                <label for="date_picker" class="label-text">Date:</label>
-                <input type="text" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
-            </td>
+                <td id="AuthorDateCol" class="AuthorDateCol">
+                    <label for="date_picker" class="resource-label-text">Date:</label>
+                    <input type="text" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
+                </td>
 
-                <script>
-                // Get today's date
-                var today = new Date();
+                    <script>
+                    // Get today's date
+                    var today = new Date();
 
-                var date =
-                (today.getMonth()+1)
-                +'-'
-                +today.getDate()
-                +'-'
-                +today.getFullYear();
+                    var date =
+                    (today.getMonth()+1)
+                    +'-'
+                    +today.getDate()
+                    +'-'
+                    +today.getFullYear();
 
-                document.getElementById("date-picker").value = date;
-                </script>
+                    document.getElementById("date-picker").value = date;
+                    </script>
 
-            <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
-                <label for="PlatoonPicker" class="label-text">Platoon:</label>
-                <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
-                    <option value="3rd Platoon">3rd Platoon</option>
-                    <option value="2nd Platoon">2nd Platoon</option>
-                    <option value="1st Platoon">1st Platoon</option>
-                </select>
-            </td>
+                <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
+                    <label for="PlatoonPicker" class="resource-label-text">Platoon:</label>
+                    <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
+                        <option value="3rd Platoon">3rd Platoon</option>
+                        <option value="2nd Platoon">2nd Platoon</option>
+                        <option value="1st Platoon">1st Platoon</option>
+                    </select>
+                </td>
 
-            <td id="AuthorSupervisorCol" class="AuthorSupervisorCol">
-                <label for="supervisor" class="label-text">Supervisor:</label>
-                <input type="text" id="supervisor" class="supervisorform">
-            </td>
-        </tr>
-    </table>
+                <td id="AuthorSupervisorCol" class="AuthorSupervisorCol">
+                    <label for="supervisor" class="resource-label-text">Supervisor:</label>
+                    <input type="text" id="supervisor" class="supervisorform">
+                </td>
+            </tr>
+        </table>
     <!-- Author info ends here -->
+
+
+
+
+
+
+
+    <!--Color and Dates begins here -->
+
+        <table class="authortable">
+            <tr>
+
+                <td id="Color" class="AuthorDateCol">
+                    <label class="resource-label-text">Color:</label>
+                    <input type="text"  class="date-picker">
+                </td>
+
+
+                <td id="Color" class="AuthorDateCol">
+                    <label class="resource-label-text">Criminal Return:</label>
+                    <input type="text"  class="date-picker">
+                </td>
+
+                <td id="Color" class="AuthorDateCol">
+                    <label class="resource-label-text">OATH Return:</label>
+                    <input type="text"  class="date-picker">
+                </td>
+
+
+            </tr>
+        </table>
+
+    <!-- Color and Dates ends here -->
+    
+
 
 
 
@@ -179,44 +204,41 @@
 
     <!-- Section Header -->
 
-      <table id="IndexCrimeReportTitle" class="titletable">
-          <tr>
-              <td colspan="6" class="NYPD">
-                  <p class="eotrecaptext">Available Resources
-                  </p>
-              </td>
-          </tr>
-      </table>
 
     <!-- Section Header -->
 
     <!-- Available Resources Permanent begins here -->
     <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
 
-
+        <tr colspan="10">
+            <td colspan="2" class="resource-label-text">Assignment:
+            </td>    
+            <td colspan="5" class="resource-label-text">M.O.S:
+            </td>  
+            <td colspan="1" class="resource-label-text">RMP#
+            </td>  
+            <td colspan="2" class="resource-label-text">Meal Time:
+            </td>  
+        </tr>
         <tr colspan="10">
 
             <td class="resourcetdtopleft" colspan="2">
-                <label for="sectorName" class="resource-label-text">Assignment:</label>
                 <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
             </td>
 
 
-            <td class="resourcetdtopleft" colspan="4">
-                <label for="DraggableMOS" class="resource-label-text">M.O.S</label>
+            <td class="resourcetdtopleft" colspan="5">
                 <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
             </td>
 
 
-            <td class="resourcetdtopleft" colspan="2">
-                <label for="RMPNum" class="resource-label-text">RMP#</label>
+            <td class="resourcetdtopleft" colspan="1">
                 <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
                 </select>
             </td>
 
             <td class="resourcetdtopleft" colspan="2">
-                <label for="mealtime" class="resource-label-text">Meal Time:</label>
-                <input id="mealtime" type="time" class="form-text">
+                <input id="mealtime" type="time" class="textarea">
             </td>
     <!-- <td class="tdright" colspan="2">
                 <input id="Crimedvcheck" type="checkbox" class="form-text">
@@ -257,29 +279,35 @@
         <div class="field-group">
             <table id="IndexCrimeRecap_Extra" class="indexcrimerecap_perma">
 
+                <tr colspan="10">
+            <td colspan="2" class="resource-label-text">Assignment:
+            </td>    
+            <td colspan="5" class="resource-label-text">M.O.S:
+            </td>  
+            <td colspan="1" class="resource-label-text">RMP#
+            </td>  
+            <td colspan="2" class="resource-label-text">Meal Time:
+            </td>  
+        </tr>
         <tr colspan="10">
 
             <td class="resourcetdtopleft" colspan="2">
-                <label for="sectorName" class="resource-label-text">Assignment:</label>
                 <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
             </td>
 
 
-            <td class="resourcetdtopleft" colspan="4">
-                <label for="DraggableMOS" class="resource-label-text">M.O.S</label>
+            <td class="resourcetdtopleft" colspan="5">
                 <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
             </td>
 
 
-            <td class="resourcetdtopleft" colspan="2">
-                <label for="RMPNum" class="resource-label-text">RMP#</label>
+            <td class="resourcetdtopleft" colspan="1">
                 <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
                 </select>
             </td>
 
             <td class="resourcetdtopleft" colspan="2">
-                <label for="mealtime" class="resource-label-text">Meal Time:</label>
-                <input id="mealtime" type="time" class="form-text">
+                <input id="mealtime" type="time" class="textarea">
             </td>
     <!-- <td class="tdright" colspan="2">
                 <input id="Crimedvcheck" type="checkbox" class="form-text">
@@ -295,14 +323,16 @@
 
 
 
+
+
             <!-- Available Resources Extra -->
 
             <!-- Remove Crime Button -->
 
-                      <tr>
+                      <tr class="buttonholder">
                         <td colspan="10" class="buttonholder">
                           <!-- Remove Crime Button-->
-                            <input type="button" class="delete" value="Remove Resource">
+                            <input type="button" class="delete" value="X">
                           <!-- Remove Crime Button -->
                         </td>
                       </tr>
@@ -349,7 +379,7 @@
     <table id="CommentsTitle" class="titletable">
         <tr>
             <td colspan="6" class="NYPD">
-                <p class="eotrecaptext">List of M.O.S
+                <p class="section-title">List of M.O.S
                 </p>
             </td>
         </tr>
@@ -437,7 +467,7 @@
     <table id="CommentsTitle" class="titletable">
         <tr>
             <td colspan="6" class="NYPD">
-                <p class="eotrecaptext">Additional Info
+                <p class="section-title">Notes:
                 </p>
             </td>
         </tr>
@@ -501,7 +531,7 @@
             							<tr>
             							  <td colspan="16" class="buttonholder">
             								<!-- Remove comments Button-->
-            								  <input type="button" class="delete" value="Remove Current">
+            								  <input type="button" class="delete" value="X">
             								<!-- Remove comments Button -->
             							  </td>
             							</tr>

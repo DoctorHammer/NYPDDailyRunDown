@@ -2,17 +2,17 @@
 <!-- /* Body */ -->
 
 body, html {
-  max-width: 21.59cm;
-  max-height: 35.56cm;
+  max-width: 8.5in;
+  max-height: 14in;
   margin: auto;
-  padding: 1rem;
+
 }
 
 @page {
-  max-width: 21.59cm;
-  max-height: 35.56cm;
+  max-width: 8.5in;
+  max-height: 14in;
     size: legal portrait;
-  margin: 0.635cm 0.635cm;
+    margin: auto;
 }
 
 
@@ -58,12 +58,12 @@ width: 100%;
 
 .indexcrimerecap_perma {
 width: 100%;
-    border-collapse: separate;
-    border-spacing: 10px 10px;
+    border-collapse: collapse;
+    border-spacing: 10px 4px;
     box-sizing: border-box;
 
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
     table-layout: fixed;
@@ -115,7 +115,7 @@ width: 100%;
     border-spacing: 10px 10px;
     box-sizing: border-box;
     border-top: 1px solid black;
-    border-bottom: 3px solid black;
+    border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
     table-layout: fixed;
@@ -161,8 +161,15 @@ text-align: center;
 }
 
 
+
+
 .AuthorPlatoonCol {
     text-align: center;
+    font-family: Vitesse;
+    font-weight: normal;
+    font-style: light;
+    font-weight: 400;
+    font-size: 8pt;
 }
 
 
@@ -211,6 +218,13 @@ text-align: center;
 padding-left: 5px;
 font-size: 10pt;
 
+}
+
+.section-title {
+  font-family: Vitesse;
+  font-style: light;
+padding-left: 5px;
+font-size: 12pt;
 }
 
 .resource-label-text {
@@ -297,6 +311,16 @@ text-align: right;
 }
 
 
+.titletext {
+  font-family: vitesse;
+  font-style: normal;
+  font-weight: 500;
+    font-size: 12pt;
+    color: #000000;
+    line-height: 0px;
+}
+
+
 .pcttext {
   font-family: vitesse;
   font-style: normal;
@@ -315,6 +339,8 @@ text-align: right;
     line-height: 0px;
 
 }
+
+
 
 .input-wrap {
   position: absolute;
@@ -386,7 +412,7 @@ select:hover {
   width: 100%;
   overflow: visible;
   resize: vertical;
-  min-height: 40px;
+  min-height: 25px;
   max-width: inherit;
   white-space:normal;
   border: 1px solid #ccc;
@@ -401,7 +427,7 @@ select:hover {
 }
 
 .textareacomment[contenteditable]:empty::before {
-  content: "Hospitalized Prisoners, Department Vehicle Accidents, Level (1,2,3) Mobilizations... etc.";
+  content: "Trainings, reminders etc.";
   color: gray;
   font-family:vitesse light;
 }
@@ -462,13 +488,21 @@ border: 1px solid #ccc;
 }
 
 .extracontainer {
-border: none;
-
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
+
 
 .index_crimes {
-border: none;
+border: 0;
+margin: 0;
+padding: 0;
+width: 100%;
 }
+
+
 
 .extraarrests {
 border: none;
@@ -490,8 +524,12 @@ border: none;
 
 
 .extracomments {
-  border: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
+  
 
 .easteregg {
   font-family: Vitesse;
@@ -549,10 +587,12 @@ border-right: 0px solid black;
 }
 
 .delete {
+  padding-top: 1pt;
   font-family:vitesse;
-  font-weight:bold;
-  width: 150px;
-  border-radius: 15px;
+  font-weight:light;
+  font-size:10px;
+  width: 25px;
+  border-radius: 5px;
   background-color:#ffe4bd;
   color:black;
 }
@@ -605,6 +645,8 @@ margin-bottom: 10px;
   font-size: 12pt;
   padding-left: 5px;
 }
+
+
 
 .email {
   font-family:vitesse;
