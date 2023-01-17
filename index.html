@@ -104,6 +104,11 @@
     </script>
 
 
+
+
+
+
+
 </head>
 
 <body>
@@ -211,34 +216,33 @@
     <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
 
         <tr colspan="10">
-            <td colspan="2" class="resource-label-text">Assignment:
+            <td colspan="6" class="resource-label-text">M.O.S:
             </td>    
-            <td colspan="5" class="resource-label-text">M.O.S:
+            <td colspan="2" class="resource-label-text">Assignment:
             </td>  
             <td colspan="1" class="resource-label-text">RMP#
             </td>  
-            <td colspan="2" class="resource-label-text">Meal Time:
+            <td colspan="1" class="resource-label-text">Meal Time:
             </td>  
         </tr>
         <tr colspan="10">
 
+            <td class="resourcetdtopleft" colspan="6">
+                <input type="text" id="drop-zone" class="textarea"></span>
+            </td>
+
+
             <td class="resourcetdtopleft" colspan="2">
                 <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
-            </td>
-
-
-            <td class="resourcetdtopleft" colspan="5">
-                <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
-            </td>
-
+            </td>            
 
             <td class="resourcetdtopleft" colspan="1">
                 <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
                 </select>
             </td>
 
-            <td class="resourcetdtopleft" colspan="2">
-                <input id="mealtime" type="time" class="textarea">
+            <td class="resourcetdtopleft" colspan="1">
+                <input id="mealtime" class="textarea">
             </td>
     <!-- <td class="tdright" colspan="2">
                 <input id="Crimedvcheck" type="checkbox" class="form-text">
@@ -279,44 +283,47 @@
         <div class="field-group">
             <table id="IndexCrimeRecap_Extra" class="indexcrimerecap_perma">
 
-                <tr colspan="10">
-            <td colspan="2" class="resource-label-text">Assignment:
-            </td>    
-            <td colspan="5" class="resource-label-text">M.O.S:
-            </td>  
-            <td colspan="1" class="resource-label-text">RMP#
-            </td>  
-            <td colspan="2" class="resource-label-text">Meal Time:
-            </td>  
-        </tr>
-        <tr colspan="10">
-
-            <td class="resourcetdtopleft" colspan="2">
-                <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
-            </td>
+            <tr colspan="10">
+                <td colspan="6" class="resource-label-text">M.O.S:
+                </td>    
+                <td colspan="2" class="resource-label-text">Assignment:
+                </td>  
+                <td colspan="1" class="resource-label-text">RMP#
+                </td>  
+                <td colspan="1" class="resource-label-text">Meal Time:
+                </td>  
+            </tr>
 
 
-            <td class="resourcetdtopleft" colspan="5">
-                <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
-            </td>
+            <tr colspan="10">
+
+                <td class="resourcetdtopleft" colspan="6">
+                    <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
+                </td>
 
 
-            <td class="resourcetdtopleft" colspan="1">
-                <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
-                </select>
-            </td>
+                <td class="resourcetdtopleft" colspan="2">
+                    <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
+                </td>            
 
-            <td class="resourcetdtopleft" colspan="2">
-                <input id="mealtime" type="time" class="textarea">
-            </td>
-    <!-- <td class="tdright" colspan="2">
-                <input id="Crimedvcheck" type="checkbox" class="form-text">
-                <label for="Crimedvcheck" class="label-text">Limited</label>
+                <td class="resourcetdtopleft" colspan="1">
+                    <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
+                    </select>
+                </td>
 
-            </td>  -->
-        </tr>
+                <td class="resourcetdtopleft" colspan="1">
+                    <input id="mealtime" class="textarea">
+                </td>
 
 
+                    <!-- <td class="tdright" colspan="2">
+                        <input id="Crimedvcheck" type="checkbox" class="form-text">
+                        <label for="Crimedvcheck" class="label-text">Limited</label>
+
+                     </td>  -->
+
+
+            </tr>
 
 
 
@@ -393,50 +400,51 @@
             <td class="moscol" colspan="1">
                 <div class="mossquad">	Squad 1	</div>
                     <br>
-                <div class="selectable">	Turk, Melike (955604)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Cruz, Rafael (965698)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Robles, Brandon (962058)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Vinci, Drew (970298)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Almanzar, Roberto (969475)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Narain, Jaswansingh (967222)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Weber, Damian (967387)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Rahman, Ashfaqur (970112)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Cavalieri, Christopher (969574)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Ahmed, Kazi (968213)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Prashad, Arun (968717)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Palaguachiseguencia, Christopher (968692)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Almanzar, Roberto (969475) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Ahmed, Kazi (968213) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Cavalieri, Christopher (969574) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Cruz, Rafael (965698) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Narain, Jaswansingh (967222) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Palaguachiseguencia, Christopher (968692) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Prashad, Arun (968717) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Rahman, Ashfaqur (970112) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Robles, Brandon (962058) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Turk, Melike (955604) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Vinci, Drew (970298) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Weber, Damian (967387) </div>
             </td>
 
             <td class="moscol" colspan="1">
                 <div class="mossquad">	Squad 2	</div>
                     <br>
-                <div class="selectable">	O'Brien, Shannon (954186)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Espinoza, Marcelo (962388)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Brown, Creel (955770)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Garcia, Caridad (962422)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Milleew, Florence (962619)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Morochoquito, Carlos (971155)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Zimonjic, Harris (971281)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Estevez, Paola (971424)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Mesiouris, Alekos (971564)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Layes, Christian (971522)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	MartinezPaula, Leonel (967991)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Delrosario, Richard (947643)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Brown, Creel (955770) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Delrosario, Richard (947643) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Estevez, Paola (971424) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Espinoza, Marcelo (962388) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Garcia, Caridad (962422) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Layes, Christian (971522) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> MartinezPaula, Leonel (967991) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Milleew, Florence (962619) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Mesiouris, Alekos (971564) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Morochoquito, Carlos (971155) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> O'Brien, Shannon (954186) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Zimonjic, Harris (971281) </div>
+
             </td>
 
 
             <td class="moscol" colspan="1">
                 <div class="mossquad">	Squad 3	</div>
                     <br>
-                    <div class="selectable">	Huda, Syed (947088)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Shawon, Delwar (972421)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Uribe, Robert (937662)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Idowu, Adesina (969811)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Lobsang, Jamyang (970666)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Barley, Olivia (970405)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Ramirez, Neris (939271)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Dzeviatka, Ilya (972387)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Chu, Carlo (941560)&nbsp&nbsp|&nbsp&nbsp</div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Barley, Olivia (970405) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Chu, Carlo (941560) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Dzeviatka, Ilya (972387) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Huda, Syed (947088) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Idowu, Adesina (969811) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Lobsang, Jamyang (970666) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Ramirez, Neris (939271) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Shawon, Delwar (972421) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Uribe, Robert (937662) </div>
             </td>
 
         </tr>
@@ -444,7 +452,42 @@
     </table>
 
 
+    
+
+
 </div>
+
+
+
+<!-- Draggable Script -->
+
+
+<script>
+  var input = document.getElementById('drop-zone');
+  var divs = document.querySelectorAll('.draggable-div');
+  var selectedDivs = [];
+
+  for (var i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('dblclick', function() {
+      selectedDivs.push(this.textContent);
+      this.style.display = 'none';
+      input.value = selectedDivs.join(', ');
+    });
+  }
+
+  input.addEventListener('dragleave', function(event) {
+    var data = event.dataTransfer.getData('text/plain');
+    var index = selectedDivs.indexOf(document.getElementById(data).textContent);
+    if (index !== -1) selectedDivs.splice(index, 1);
+    input.value = selectedDivs.join(', ');
+    document.getElementById(data).style.display = 'block';
+  });
+</script>
+
+
+
+<!-- Draggable Script -->
+
 
 
 

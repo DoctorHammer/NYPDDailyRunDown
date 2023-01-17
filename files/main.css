@@ -369,7 +369,7 @@ text-align: right;
 
 
 .textarea {
-  display: block;
+  display:block;
   width: 100%;
   overflow: visible;
   resize: vertical;
@@ -548,6 +548,21 @@ border: none;
   color: transparent;
 }
 
+.draggable-div {
+  cursor: move;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+  font-family: Vitesse;
+  font-style: normal;
+  font-size: 8pt;
+  text-align: left;
+  padding: 5pt;
+}
+
 
 .selectable{
   -webkit-touch-callout: all; /* iOS Safari */
@@ -561,7 +576,6 @@ border: none;
   font-size: 8pt;
   text-align: left;
   padding:5pt;
-
 
 }
 
