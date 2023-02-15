@@ -45,6 +45,50 @@ width: 100%;
 }
 
 
+
+
+<!-- /* BUTTONSS */ -->
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.myButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.myButton:hover {
+  background-color: #3e8e41;
+}
+
+
+<!-- /* BUTTONSS */ -->
+
+
+
+
+
+
+
+
+
+
+
+
 .authortable {
 width: 100%;
     border-collapse: separate;
@@ -67,12 +111,11 @@ width: 100%;
 
 
 .indexcrimerecap_perma {
-width: 100%;
+    width: 100%;
     border-collapse: collapse;
     border-spacing: 10px 4px;
     box-sizing: border-box;
-
-    border-top: 1px solid black;
+    border-top: 0px solid black;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -366,6 +409,28 @@ text-align: right;
   /*   Sort of a magic number to add extra space for number spinner */
   padding: 0 1rem;
 }
+
+
+#input {
+  display:block;
+  width: 100%;
+  overflow: visible;
+  resize: vertical;
+  min-height: 14pt;
+  max-width: inherit;
+  white-space:normal;
+  border: 1px solid #ccc;
+  font-family: vitesse;
+  font-style: normal;
+  font-weight:normal;
+  font-size: 8pt;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: normal;
+}
+
 
 
 .textarea {

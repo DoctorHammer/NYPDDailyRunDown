@@ -43,6 +43,24 @@ width: 100%;
 }
 
 
+<!-- /* HIDE DROP DOWN ARROW */ -->
+
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+
+<!-- /* HIDE DROP DOWN ARROW */ -->
+
+
+
 .authortable {
 width: 100%;
     border-collapse: separate;
@@ -60,7 +78,7 @@ width: 100%;
       border-spacing: 10px 4px;
       box-sizing: border-box;
   
-      border-top: 1px solid black;
+      border-top: 0px solid black;
       border-bottom: 1px solid black;
       border-left: 1px solid black;
       border-right: 1px solid black;
@@ -323,6 +341,7 @@ font-size: 12pt;
 
 }
 
+
 .input-wrap {
   position: absolute;
 
@@ -360,17 +379,6 @@ font-size: 12pt;
 }
 
 
-.textarea:hover {
-    box-shadow: 0 0 0px 0 inset, 0 0 2px 2px #abeaff;
-}
-
-input:hover {
-    box-shadow: 0 0 0px 0 inset, 0 0 2px 2px #abeaff;
-}
-
-select:hover {
-    box-shadow: 0 0 0px 0 inset, 0 0 2px 2px #abeaff;
-}
 
 .nobreak {
   page-break-inside: avoid !important;
@@ -404,11 +412,7 @@ select:hover {
 
 
 
-.textareacomment:hover {
-    box-shadow: 0 0 0px 0 inset, 0 0 2px 2px #abeaff;
-    display:none;
-    visibility: hidden;
-}
+
 
 
 .textareanews {

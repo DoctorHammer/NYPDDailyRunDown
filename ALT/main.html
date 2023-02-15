@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Made by PO Shawon -->
+
+    <!-- Reused codes from my EOT Recap project -->
+
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Daily Rundown</title>
+    <meta name="Daily Rundown" content="Daily Rundown" >
+    <link rel="icon" href="files/favicon.png">
+
+    <link rel="stylesheet" href="files/main.css">
+    <link rel="stylesheet" href="files/fonts.css">
+    <link rel="stylesheet" href="files/print.css" type="text/css" media="print" />
+    <script src="files/jquery.min.js"> </script>
+    <script src="files/jquery.repeatable.js"> </script>
+    <script src="files/discoverytags_jc.js"></script>
+
+    <script type="text/javascript">
+      // Warn when user tries to reload page
+         var popit = true;
+         window.onbeforeunload = function() {
+              if(popit == true) {
+                   popit = false;
+                   return "Reload site? Changes you made may not be saved.";
+              }
+         }
+    </script>
+
+    <script>
+
+        // Warn when user tries to close page
+
+        window.onbeforeunload = function (e) {
+            e = e || window.event;
+
+            // For IE and Firefox prior to version 4
+            if (e) {
+                e.returnValue = 'Any string';
+            }
+
+            // For Safari
+            return 'Any string';
+        };
+
+    </script>
+
+
+ 
+
+    <script>
+      // Open a mailto link in a new tab
+      function mailto(email, subject, body) {
+          var url;
+          url = 'mailto:'
+      				+ email
+      				;
+          url += '?subject='
+      				+ subject
+      				+ encodeURIComponent("EOT Recap - ")
+      				+ encodeURIComponent(document.getElementById('date-picker').value)
+      				+ encodeURIComponent(" - ")
+      				+ encodeURIComponent(document.getElementById('PlatoonPicker').value)
+      				+ encodeURIComponent(" - ")
+      				+ encodeURIComponent(document.getElementById('supervisor').value)
+      				;
+          url += '&body='
+      				+ body
+      				+ encodeURIComponent("(Please locate and attach the file you've saved as PDF. Remove this line before sending.)")
+      				;
+          window.open(url)
+      				;
+      }
+    </script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+  <style>
+    /* Add styles for the table, cells, and snippets */
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      width: inherit;
+      height: 20pt;
+      border: 1px solid black;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 12pt;
+    }
+    .snippet {
+      display: inline-block;
+      width: 200px;
+      height: 14pt;
+      border: 1px solid black;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 12pt;
+      cursor: pointer;
+      background-color: yellow;
+    }
+
+    .snippet.gray {
+      opacity: 65%;
+      width: 200px;
+      height: 16pt;
+      border: 1px solid black;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 12pt;
+      cursor: pointer;
+      background-color: gray;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+
+    <!--Top Table begins here -->
+    <table id="toptable" class="toptable">
+      <tr>
+          <td class="NYPD">
+              <p class="titletext">Daily Rundown</p>
+          </td>
+  </table>
+<!-- Top Table ends here -->
+
+
+<!-- Author info begins here -->
+  <table id="authorinfo" class="authortable">
+      <tr>
+
+          <td id="AuthorDateCol" class="AuthorDateCol">
+              <label for="date_picker" class="resource-label-text">Date:</label>
+              <input type="text" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
+          </td>
+
+              <script>
+              // Get today's date
+              var today = new Date();
+
+              var date =
+              (today.getMonth()+1)
+              +'-'
+              +today.getDate()
+              +'-'
+              +today.getFullYear();
+
+              document.getElementById("date-picker").value = date;
+              </script>
+
+          <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
+              <label for="PlatoonPicker" class="resource-label-text">Platoon:</label>
+              <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
+                  <option value="3rd Platoon">3rd Platoon</option>
+                  <option value="2nd Platoon">2nd Platoon</option>
+                  <option value="1st Platoon">1st Platoon</option>
+              </select>
+          </td>
+
+          <td id="AuthorSupervisorCol" class="AuthorSupervisorCol">
+              <label for="supervisor" class="resource-label-text">Supervisor:</label>
+              <input type="text" id="supervisor" class="supervisorform">
+          </td>
+      </tr>
+  </table>
+<!-- Author info ends here -->
+
+
+
+
+
+
+
+<!--Color and Dates begins here -->
+
+  <table class="colordatetable">
+      <tr>
+
+          <td id="Color" class="AuthorDateCol">
+              <label class="resource-label-text">Color:</label>
+              <input type="text"  class="date-picker">
+          </td>
+
+
+          <td id="Color" class="AuthorDateCol">
+              <label class="resource-label-text">C:</label>
+              <input type="text"  class="date-picker">
+          </td>
+
+          <td id="Color" class="AuthorDateCol">
+              <label class="resource-label-text">OATH:</label>
+              <input type="text"  class="date-picker">
+          </td>
+
+
+      </tr>
+  </table>
+
+<!-- Color and Dates ends here -->
+
+
+
+    <div class="field-group">
+      <table id="IndexCrimeRecap_Extra" class="indexcrimerecap_perma">
+
+        <tr colspan="14">
+          <td colspan="4" class="resource-label-text">M.O.S #1:
+          </td>    
+          <td colspan="4" class="resource-label-text">M.O.S #2:
+          </td> 
+          <td colspan="2" class="resource-label-text">Assignment:
+          </td>  
+          <td colspan="2" class="resource-label-text">Meal Time:
+          </td>  
+          <td colspan="1" class="resource-label-text">RMP:
+          </td>  
+          <td colspan="1" class="resource-label-text">AED:
+          </td> 
+        </tr>
+
+        <tr colspan="14">
+
+          <td class="droppable" colspan="4">
+          </td>
+          <td class="droppable" colspan="4">
+          </td>
+
+          <td class="droppable" colspan="2">
+          </td>
+
+          <td class="droppable" colspan="2">
+          </td>
+
+          <td class="droppable" colspan="1">
+          </td>
+          <td class="droppable" colspan="1">
+          </td>
+        </tr>
+
+    </table>
+    </div>
+
+  <script src="snippetgenerator.js"></script>
+
+<br>
+
+<input id="new-snippet" type="text" placeholder="MOS Name">
+<button id="add-snippet">Add MOS</button>
+
+
+
+<script>
+
+$(function() {
+  let selectedSnippet = null;
+
+  $('.snippet').draggable({
+    helper: 'clone',
+    start: function(event, ui) {
+      selectedSnippet = $(this);
+    }
+  });
+
+  $('.cell').droppable({
+    drop: function(event, ui) {
+      if ($(this).find('.snippet-content').length === 0) {
+        $(this).html(selectedSnippet.html());
+        $(this).find('.snippet-content').addClass('dropped');
+        selectedSnippet.addClass('dropped');
+        selectedSnippet = null;
+      }
+    }
+  });
+
+  $(document).on('click', '.cell .remove', function() {
+    const cell = $(this).closest('.cell');
+    const snippetContent = cell.find('.snippet-content');
+    if (snippetContent.length) {
+      snippetContent.removeClass('dropped');
+      cell.empty();
+    }
+  });
+
+  $(document).on('dblclick', '.cell', function() {
+    $(this).empty();
+  });
+
+  $('#add-snippet').click(function() {
+    const name = $('#new-snippet').val();
+    if (name) {
+      const snippet = $('<div>').addClass('snippet draggable').text(name);
+      $('#snippet-container').append(snippet);
+      snippet.draggable({
+        helper: 'clone',
+        start: function(event, ui) {
+          selectedSnippet = $(this);
+        }
+      });
+      $('#new-snippet').val('');
+    }
+  });
+
+  // Add snippet on enter key press
+  $('#new-snippet').keypress(function(event) {
+    if (event.which == 13) {
+      addSnippet();
+    }
+  });
+
+});
+
+
+</script>
+
+<br>
+
+  <div id="snippet-container">
+  </div>
+
+
+  <script src="dragdrop.js"></script>
+
+
+
+</body>
+</html>
+

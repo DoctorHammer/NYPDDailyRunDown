@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Made by PO Shawon -->
+
+    <!-- Reused codes from my EOT Recap project -->
+
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Daily Rundown</title>
+    <meta name="Daily Rundown" content="Daily Rundown" >
+    <link rel="icon" href="files/favicon.png">
+
+    <link rel="stylesheet" href="files/main.css">
+    <link rel="stylesheet" href="files/fonts.css">
+    <link rel="stylesheet" href="files/print.css" type="text/css" media="print" />
+    <script src="files/jquery.min.js"> </script>
+    <script src="files/jquery.repeatable.js"> </script>
+
+    <script type="text/javascript">
+      // Warn when user tries to reload page
+         var popit = true;
+         window.onbeforeunload = function() {
+              if(popit == true) {
+                   popit = false;
+                   return "Reload site? Changes you made may not be saved.";
+              }
+         }
+    </script>
+
+    <script>
+
+        // Warn when user tries to close page
+
+        window.onbeforeunload = function (e) {
+            e = e || window.event;
+
+            // For IE and Firefox prior to version 4
+            if (e) {
+                e.returnValue = 'Any string';
+            }
+
+            // For Safari
+            return 'Any string';
+        };
+
+    </script>
+
+
+ 
+
+    <script>
+      // Open a mailto link in a new tab
+      function mailto(email, subject, body) {
+          var url;
+          url = 'mailto:'
+      				+ email
+      				;
+          url += '?subject='
+      				+ subject
+      				+ encodeURIComponent("EOT Recap - ")
+      				+ encodeURIComponent(document.getElementById('date-picker').value)
+      				+ encodeURIComponent(" - ")
+      				+ encodeURIComponent(document.getElementById('PlatoonPicker').value)
+      				+ encodeURIComponent(" - ")
+      				+ encodeURIComponent(document.getElementById('supervisor').value)
+      				;
+          url += '&body='
+      				+ body
+      				+ encodeURIComponent("(Please locate and attach the file you've saved as PDF. Remove this line before sending.)")
+      				;
+          window.open(url)
+      				;
+      }
+    </script>
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+    <!--Top Table begins here -->
+        <table id="toptable" class="toptable">
+            <tr>
+                <td class="NYPD">
+                    <p class="titletext">Daily Rundown</p>
+                </td>
+        </table>
+    <!-- Top Table ends here -->
+    
+
+    <!-- Author info begins here -->
+        <table id="authorinfo" class="authortable">
+            <tr>
+
+                <td id="AuthorDateCol" class="AuthorDateCol">
+                    <label for="date_picker" class="resource-label-text">Date:</label>
+                    <input type="text" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
+                </td>
+
+                    <script>
+                    // Get today's date
+                    var today = new Date();
+
+                    var date =
+                    (today.getMonth()+1)
+                    +'-'
+                    +today.getDate()
+                    +'-'
+                    +today.getFullYear();
+
+                    document.getElementById("date-picker").value = date;
+                    </script>
+
+                <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
+                    <label for="PlatoonPicker" class="resource-label-text">Platoon:</label>
+                    <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
+                        <option value="3rd Platoon">3rd Platoon</option>
+                        <option value="2nd Platoon">2nd Platoon</option>
+                        <option value="1st Platoon">1st Platoon</option>
+                    </select>
+                </td>
+
+                <td id="AuthorSupervisorCol" class="AuthorSupervisorCol">
+                    <label for="supervisor" class="resource-label-text">Supervisor:</label>
+                    <input type="text" id="supervisor" class="supervisorform">
+                </td>
+            </tr>
+        </table>
+    <!-- Author info ends here -->
+
+
+
+
+
+
+
+    <!--Color and Dates begins here -->
+
+        <table class="colordatetable">
+            <tr>
+
+                <td id="Color" class="AuthorDateCol">
+                    <label class="resource-label-text">Color:</label>
+                    <input type="text"  class="date-picker">
+                </td>
+
+
+                <td id="Color" class="AuthorDateCol">
+                    <label class="resource-label-text">C:</label>
+                    <input type="text"  class="date-picker">
+                </td>
+
+                <td id="Color" class="AuthorDateCol">
+                    <label class="resource-label-text">OATH:</label>
+                    <input type="text"  class="date-picker">
+                </td>
+
+
+            </tr>
+        </table>
+
+    <!-- Color and Dates ends here -->
+    
+
+
+
+
+
+
+
+<!-- Section -->
+    <!-- Available Resources -->
+
+    <!-- Section Header -->
+
+
+    <!-- Section Header -->
+
+    <!-- Available Resources Permanent begins here -->
+<div class="container">
+    <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
+
+        <div class="container">
+
+            <input type="text" id="inputBox1" onclick="inputClick(this)">
+            <input type="text" id="inputBox2" onclick="inputClick(this)">
+            <input type="text" id="inputBox3" onclick="inputClick(this)">
+            <input type="text" id="inputBox4" onclick="inputClick(this)">
+            <input type="text" id="inputBox5" onclick="inputClick(this)">
+            
+            
+
+              <div class="button-container">
+                <button class="myButton" onclick="setValue(this.innerHTML)">Ahmed, K</button>
+                <button class="myButton" onclick="setValue(this.innerHTML)">Almanzar, R</button>
+                <button class="myButton" onclick="setValue(this.innerHTML)">Brown, C</button>
+                <!-- Add more buttons here -->
+              </div>
+            </div>
+
+
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    <!-- Available Resources Permanent ends here -->
+
+    <!-- Available Resources extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="index_crimes">
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add Crime Button-->
+                    <input type="button" class="add" value="Add Resource">
+                    <!-- Add Crime Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+
+
+    <!-- Available Resources Extra -->
+    <script type="text/template" id="index_crimes">
+        <div class="field-group">
+            <table id="IndexCrimeRecap_Extra" class="indexcrimerecap_perma">
+
+            <tr colspan="14">
+            <td colspan="4" class="resource-label-text">M.O.S #1:
+            </td>    
+            <td colspan="4" class="resource-label-text">M.O.S #2:
+            </td> 
+            <td colspan="2" class="resource-label-text">Assignment:
+            </td>  
+            <td colspan="2" class="resource-label-text">Meal Time:
+            </td>  
+            <td colspan="1" class="resource-label-text">RMP:
+            </td>  
+            <td colspan="1" class="resource-label-text">AED:
+            </td> 
+        </tr>
+        <tr colspan="14">
+
+            <td class="resourcetdtopleft" colspan="4">
+                <input type="text" id="drop-zone" class="textarea"></span>
+            </td>
+
+            <td class="resourcetdtopleft" colspan="4">
+                <input type="text" id="drop-zone" class="textarea"></span>
+            </td>
+
+            <td class="resourcetdtopleft" colspan="2">
+                <input class="textarea" role="textbox">
+            </td>            
+
+            <td class="resourcetdtopleft" colspan="2">
+                <input  class="textarea" role="textbox">
+                </select>
+            </td>
+
+            <td class="resourcetdtopleft" colspan="1">
+                <input class="textarea">
+            </td>
+
+            <td class="resourcetdtopleft" colspan="1">
+                <input class="textarea">
+            </td>
+
+    <!-- <td class="tdright" colspan="2">
+                <input id="Crimedvcheck" type="checkbox" class="form-text">
+                <label for="Crimedvcheck" class="label-text">Limited</label>
+
+            </td>  -->
+        </tr>
+
+
+
+
+
+
+
+
+            <!-- Available Resources Extra -->
+
+            <!-- Remove Crime Button -->
+
+                      <tr class="buttonholder">
+                        <td colspan="14" class="buttonholder">
+                          <!-- Remove Crime Button-->
+                            <input type="button" class="delete" value="X">
+                          <!-- Remove Crime Button -->
+                        </td>
+                      </tr>
+
+            <!-- Remove Crime Button -->
+              	</table>
+              </div>
+            </script>
+    <!-- Available Resources Extra -->
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".index_crimes .repeatable").repeatable({
+                addTrigger: ".index_crimes .add",
+                deleteTrigger: ".index_crimes .delete",
+                template: "#index_crimes",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+    <!-- Available Resources extra ends here -->
+
+    <!-- Available Resourcesp -->
+
+<!-- Section -->
+
+
+
+
+
+
+
+
+  <!-- Section -->
+    <!-- Bank -->
+
+
+    <!-- Section Header -->
+
+    <div class="ListofMOSDivHidden">
+
+    <table id="CommentsTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="section-title">List of M.O.S (Drag and Drop)
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section Header -->
+
+    <!-- List of MOS Permanent begins here -->
+
+    <table id="comments_perma" class="comments_perma">
+
+<div class="button-container">
+    <button class="myButton" onclick="setValue(this.innerHTML)">Ahmed, K</button>
+    <button class="myButton" onclick="setValue(this.innerHTML)">Almanzar, R</button>
+    <button class="myButton" onclick="setValue(this.innerHTML)">Brown, C</button>
+    <!-- Add more buttons here -->
+</div>
+
+<script>
+    
+    var lastClickedInput = null;
+
+// function to set value to input box
+function setValue(value) {
+  // check if the last clicked input box is set
+  if (lastClickedInput) {
+    if (lastClickedInput.value == value) {
+      lastClickedInput.value = "";
+    } else {
+      lastClickedInput.value = value;
+    }
+  } else {
+    // if not, set the value of the first input box
+    var inputBox = document.getElementById("inputBox1");
+    inputBox.value = value;
+    lastClickedInput = inputBox;
+  }
+}
+
+// function to handle input box click events
+function inputClick(input) {
+  lastClickedInput = input;
+}
+
+var lastClickedButton = null;
+var originalColor;
+
+// function to handle button click events
+function buttonClick() {
+  if (lastClickedButton === this) {
+    this.style.backgroundColor = originalColor;
+    lastClickedButton = null;
+  } else {
+    if (lastClickedButton) {
+      lastClickedButton.style.backgroundColor = originalColor;
+    }
+    lastClickedButton = this;
+    originalColor = window.getComputedStyle(this).getPropertyValue("background-color");
+    this.style.backgroundColor = "red";
+  }
+}
+
+// add the click event to all buttons
+var buttons = document.querySelectorAll(".myButton");
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", buttonClick);
+}
+
+    
+    
+    
+    
+    </script>
+
+
+        <tr colspan="3">
+
+
+
+
+            <td class="moscol" colspan="1">
+                <div class="mossquad">	Squad 1	</div>
+                    <br>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Almanzar, Roberto (969475) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Ahmed, Kazi (968213) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Cavalieri, Christopher (969574) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Cruz, Rafael (965698) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Narain, Jaswansingh (967222) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Palaguachiseguencia, Christopher (968692) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Prashad, Arun (968717) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Rahman, Ashfaqur (970112) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Robles, Brandon (962058) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Turk, Melike (955604) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Vinci, Drew (970298) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Weber, Damian (967387) </div>
+            </td>
+
+            <td class="moscol" colspan="1">
+                <div class="mossquad">	Squad 2	</div>
+                    <br>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Brown, Creel (955770) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Delrosario, Richard (947643) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Estevez, Paola (971424) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Espinoza, Marcelo (962388) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Garcia, Caridad (962422) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Layes, Christian (971522) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> MartinezPaula, Leonel (967991) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Milleew, Florence (962619) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Mesiouris, Alekos (971564) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Morochoquito, Carlos (971155) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> O'Brien, Shannon (954186) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Zimonjic, Harris (971281) </div>
+
+            </td>
+
+
+            <td class="moscol" colspan="1">
+                <div class="mossquad">	Squad 3	</div>
+                    <br>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Barley, Olivia (970405) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Chu, Carlo (941560) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Dzeviatka, Ilya (972387) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Huda, Syed (947088) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Idowu, Adesina (969811) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Lobsang, Jamyang (970666) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Ramirez, Neris (939271) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Shawon, Delwar (972421) </div>
+                    <div id="draggable-div" class="draggable-div" draggable="true"> Uribe, Robert (937662) </div>
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    
+
+
+</div>
+
+
+
+<!-- Draggable Script -->
+
+
+<script>
+  var input = document.getElementById('drop-zone');
+  var divs = document.querySelectorAll('.draggable-div');
+  var selectedDivs = [];
+
+  for (var i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('dblclick', function() {
+      selectedDivs.push(this.textContent);
+      this.style.display = 'none';
+      input.value = selectedDivs.join(', ');
+    });
+  }
+
+  input.addEventListener('dragleave', function(event) {
+    var data = event.dataTransfer.getData('text/plain');
+    var index = selectedDivs.indexOf(document.getElementById(data).textContent);
+    if (index !== -1) selectedDivs.splice(index, 1);
+    input.value = selectedDivs.join(', ');
+    document.getElementById(data).style.display = 'block';
+  });
+</script>
+
+
+
+<!-- Draggable Script -->
+
+
+
+
+    <!-- List of MOS Permanent ends here -->
+
+
+
+<br>
+
+
+
+
+
+
+  <!-- Section -->
+    <!-- Comments -->
+
+
+    <!-- Section Header -->
+    <table id="CommentsTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="section-title">Notes:
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section Header -->
+
+    <!-- Comments Permanent begins here -->
+
+    <table id="comments_perma" class="comments_perma">
+
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="16">
+                <span id="comments_textarea" class="textareacomment" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- Comments Permanent ends here -->
+
+
+
+    <!-- Comments extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extracomments">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="buttonholder">
+                    <!-- Add comments Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add comments Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extracomments">
+        <div class="field-group">
+
+
+                <table id="comments_perma" class="comments_perma">
+
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan= "16">
+                      <span id="condition" class="textareacomment" role="textbox" contenteditable=""></span>
+                    </td>
+                  </tr>
+
+
+
+            					    <!-- Remove comments Button -->
+            							<tr>
+            							  <td colspan="16" class="buttonholder">
+            								<!-- Remove comments Button-->
+            								  <input type="button" class="delete" value="X">
+            								<!-- Remove comments Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove comments Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extracomments .repeatable").repeatable({
+                addTrigger: ".extracomments .add",
+                deleteTrigger: ".extracomments .delete",
+                template: "#extracomments",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+
+
+
+
+
+    
+
+
+
+    <!-- Initialize Script -->
+
+    <!-- Comments extra ends here -->
+
+    <!-- Comments -->
+
+<!-- Section -->
+
+
+
+<!-- Print/Save Buttons  -->
+
+    <table class="bottombuttonsholder">
+      <tr class="topaligntr">
+        <td class="tdmiddle">
+
+            <input type="button" id="printbutton" class="print" value="Print" onclick="window.print()">
+
+     
+        </td>
+
+<!-- Email button not used   
+
+        <td class="tdmiddle">
+            <input type="button" id="emailbutton" class="email" value="2. Send Email" onclick="mailto('', '', '');event.preventDefault()">
+        </td>
+
+-->  
+      </tr>
+
+      <!-- labels not used  
+      <tr class="topaligntr">
+        <td class="tdmiddle">
+            <label class="print-text">(Click to print)</label>
+        </td>
+ 
+        <td class="tdmiddle">
+            <label class="email-text">(Attach the PDF file you just saved)</label>
+        </td>
+
+
+
+      </tr>
+
+-->  
+
+      <tr class="topaligntr">
+        <td class="tdmiddle" colspan="2">
+          <p class="easteregg">Made by PO Shawon 972421</p>
+        </td>
+      </tr>
+
+    </table>
+
+<!-- Print/Save Buttons  -->
+
+<!-- Made by Shawon -->
+
+
+</body>
+</html>
